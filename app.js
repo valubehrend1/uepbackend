@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
 
+
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 
-/* app.use(function (req, res, next) {
+app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT');
     next();
@@ -17,7 +18,7 @@ app.options('/*', function(req, res, next){
      res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With, x-acces-token');
      res.send(200);
 
- }) */
+ })
 
 const usersRouter = require('./routes/users');
 const indexRouter = require('./routes/index');
@@ -36,4 +37,4 @@ app.use('/', indexRouter);
 // });
 // //
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);

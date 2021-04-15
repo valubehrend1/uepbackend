@@ -5,7 +5,7 @@ const indexRouter = express.Router();
 
 
 indexRouter.use((req,res,next) => {
-    res.send("<div>Home</div>")
+    res.send("")
 });
 
 module.exports = indexRouter;

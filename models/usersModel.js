@@ -2,18 +2,21 @@ const mongoose = require('../bin/mongodb');
 
 const usersSchema = new mongoose.Schema({
         nameForm: {
-            type: String
+            type: String,
+            require: true
         },
         email: {
-            type:String
+            type:String,
+            require: true
         },
         
         phone: { 
-            Number
+            type:Number
         },
         
         option: {
-            type:String
+            type:String,
+            require: true
         },
 
         file: {
