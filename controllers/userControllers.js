@@ -37,12 +37,12 @@ module.exports = {
             console.log('Data: ', req.body)
 
             const transporter = nodeMailer.createTransport({
-                host: 'smtp.gmail.com',
+                host: 'mail.privateemail.com',
                 port: 465,
                 secure: true,
                 auth: {
-                    user: 'uepmail@gmail.com',
-                    pass: 'epkhphpqujonahrl'
+                    user: 'info@uep-es.com',
+                    pass: 'Ff963852741'
                 }
             })
 
@@ -58,7 +58,7 @@ module.exports = {
                         <p style="font-size: 25px; font-family: 'Raleway'; text-align:center"><b>Nuevo mensaje</b></p>
                     </div>
                     <p style="font-size: 16px; font-family: 'Raleway'; text-align:center;"><b>Nombre: </b>${user.nameForm}</p>
-                    <p style="font-size: 16px; font-family: 'Raleway'; text-align:center;"><b>Email: </b>${user.email}</p>
+                    <p style="font-size: 16px; font-family: 'Raleway'; text-align:center;"><b>Email: </b><a>${user.email}</a></p>
                     <p style="font-size: 16px; font-family: 'Raleway'; text-align:center;"><b>Teléfono: </b>${user.phone}</p>
                     <p style="font-size: 16px; font-family: 'Raleway'; text-align:center;"><b>Motivo de contacto: </b>${user.option}</p>
                     <p style="font-size: 16px; font-family: 'Raleway'; text-align:center;"><b>Consulta:</b></p>
@@ -67,8 +67,8 @@ module.exports = {
                 </html>
                 `
             var message = {
-                from: user.email,
-                to: 'uepmail@gmail.com',
+                from: 'info@uep-es.com',
+                to: 'info@uep-es.com',
                 replyTo: user.email,
                 subject: user.option,
                 html: fieldheader,
