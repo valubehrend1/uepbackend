@@ -5,35 +5,17 @@ const nodeMailer = require('nodemailer');
 
 module.exports = {
 
-    create: async function (req, res, next) {
-        try {
-            const user = await new usersModel({
-                nameForm: req.body.nameForm,
-                email: req.body.email,
-                phone: req.body.phone,
-                asunto: req.body.asunto,
-                file: req.body.file,
-                option: req.body.option,
-
-            });
-            const document = await user.save()
-            res.json(document);
-        } catch (e) {
-            console.log('Exception Create Category', e);
-            next(e);
-        };
-    },
 
     email: async function (req, res, next) {
         try {
-            const user = await new usersModel({
+            const user = {
                 nameForm: req.body.nameForm,
                 email: req.body.email,
                 phone: req.body.phone,
                 file: req.body.file,
                 option: req.body.option,
                 asunto: req.body.asunto,
-            });
+            };
             console.log('Data: ', req.body)
 
             const transporter = nodeMailer.createTransport({
