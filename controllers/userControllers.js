@@ -1,5 +1,3 @@
-const usersModel = require('../models/usersModel');
-
 const nodeMailer = require('nodemailer');
 
 
